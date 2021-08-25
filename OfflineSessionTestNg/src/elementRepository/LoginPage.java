@@ -1,0 +1,46 @@
+package elementRepository;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage {
+	
+	public WebDriver driver ;
+	
+	//Constructor to initialize web elements
+	public LoginPage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+		this.driver=driver;
+	}
+
+	//Web Elements
+	@FindBy(id="username") private WebElement usernameTextField ;
+	
+	@FindBy(name="pwd") private WebElement passwordTextField ;
+	
+	@FindBy(id="loginButton") private WebElement loginButton ;
+
+	//Getters for web elements
+	public WebElement getUsernameTextField() {
+		return usernameTextField;
+	}
+
+	public WebElement getPasswordTextField() {
+		return passwordTextField;
+	}
+
+	public WebElement getLoginButton() {
+		return loginButton;
+	}
+	
+	//Business logics
+	public HomePage login(String username, String password) {
+		usernameTextField.sendKeys(username);
+		passwordTextField.sendKeys(password);
+		loginButton.click();
+		return new HomePage(driver);
+	}
+	
+}

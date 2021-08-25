@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners><listener class-name="lsit.ITestListenerImplentation"></listener></listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="takingScreenshot.TC_05Test"/>
+      <class name="takingScreenshot.TC_04Test"/>
+      <class name="takingScreenshot.TC_06Test"/>
+      <class name="takingScreenshot.TC_02Test"/>
+      <class name="takingScreenshot.TC_03Test"/>
+      <class name="takingScreenshot.TC_01Test"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
